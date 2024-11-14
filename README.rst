@@ -1,13 +1,19 @@
 Video on Zephyr
 ###############
 
-.. note::
+.. warning::
 
    The boards presented here have not all been tested with all
    use-cases, and support for some hardware is still a work in
    progress.
 
-A presentation to show the diversity of hardwrare already supported by
+.. warning::
+
+   The speeds are directly out of the datasheet. It is typically
+   not possible to reach the max spead for any system, but it
+   gives an idea of the class of device they belong to.
+
+A presentation to show the diversity of hardwrare that can run
 Zephyr today.
 
 
