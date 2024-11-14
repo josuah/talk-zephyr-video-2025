@@ -135,8 +135,8 @@ All-in-one board with IMU, microphone, 2 MP camera built-in, fast USB.
    USB2 (st,stm32-otghs)
    |||||||||||||||||||||||| 480 MHz
 
-   Ethernet (st,stm32h7-ethernet)
-   ||||| 100 MHz
+   Wi-Fi (murata,1dx)
+   |||| 65 Mbit/s
 
    CPU cores (arm,cortex-m7 + arm,cortex-m4)
    |||||||||||||||||||||||| 480 MHz
