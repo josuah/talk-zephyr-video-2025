@@ -33,37 +33,6 @@ Terms that might need to be explained.
    position of a device.
 
 
-FRDM-MCXN947
-************
-
-Dual Cortex-M33 (small) system with peripherals usually only found on
-larger Linux-capable devices: "do more with less"
-
-.. image:: img/FRDM-MCXN947.jpg
-   :width: 100%
-
-.. code-block::
-
-   DVP camera input (nxp,video-smartdma) 16 pins max, 150 MHz each
-   |||||||| |||||||| |||||||| |||||||| |||||||| |||||||| |||||||| 1200 MHz
-
-   USB2 (nxp,ehci)
-   |||||||||||||||||||||||| 480 MHz
-
-   Ethernet (nxp,enet-qos)
-   ||||| 100 MHz
-
-   CPU cores (arm,cortex-m33f)
-   |||||||| 150 MHz
-   |||||||| 150 MHz
-
-   + eIQ NPU on-board for A.I. inference (release planned 2025 [1])
-
-[1]: `eIQ`_ application note
-
-.. _eIQ: https://community.nxp.com/pwmxy87654/attachments/pwmxy87654/MCX%40tkb/9/14/Add%20Machine%20Learning%20Functionality%20to%20Your%20NXP%20MCU-based%20Design%20(Tech%20Days%202024).pdf
-
-
 i.MX RT1170
 ***********
 
@@ -96,6 +65,37 @@ transmit *more often* rather than *more at once*.
    |||||||||||||||||||| 400 MHz
 
    + Video processing cores (cropping, resizing, color conversion)
+
+
+FRDM-MCXN947
+************
+
+Dual Cortex-M33 (small) system with peripherals usually only found on
+larger Linux-capable devices: "do more with less"
+
+.. image:: img/FRDM-MCXN947.jpg
+   :width: 100%
+
+.. code-block::
+
+   DVP camera input (nxp,video-smartdma) 16 pins max, 150 MHz each
+   |||||||| |||||||| |||||||| |||||||| |||||||| |||||||| |||||||| 1200 MHz
+
+   USB2 (nxp,ehci)
+   |||||||||||||||||||||||| 480 MHz
+
+   Ethernet (nxp,enet-qos)
+   ||||| 100 MHz
+
+   CPU cores (arm,cortex-m33f)
+   |||||||| 150 MHz
+   |||||||| 150 MHz
+
+   + eIQ NPU on-board for A.I. inference (release planned 2025 [1])
+
+[1]: `eIQ`_ application note
+
+.. _eIQ: https://community.nxp.com/pwmxy87654/attachments/pwmxy87654/MCX%40tkb/9/14/Add%20Machine%20Learning%20Functionality%20to%20Your%20NXP%20MCU-based%20Design%20(Tech%20Days%202024).pdf
 
 
 WeAct MiniSTM32H7xx
