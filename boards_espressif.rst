@@ -8,8 +8,8 @@ Self-contained board for wireless (WiFi, Bluetooth).
 
 .. code-block::
 
-   16-pins max, 40/80 MHz each
-   |||| |||| |||| |||| |||| |||| |||| |||| 640 MHz
+   DVP (espressif,lsd-cam)
+   |||| |||| |||| |||| |||| |||| |||| |||| 8 pins (16 max) 80 MHz each
 
    Wi-Fi (espressif,esp32-wifi)
    |||||||| 150 Mbit/s

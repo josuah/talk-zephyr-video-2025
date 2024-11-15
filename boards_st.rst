@@ -8,8 +8,8 @@ All-in-one board with IMU, microphone, 2 MP camera built-in, fast USB.
 
 .. code-block::
 
-   DVP camera input (st,stm32-dcmi) 14 pins max, 80 MHz each
-   |||| |||| |||| |||| |||| |||| |||| |||| 640 MHz
+   DVP camera input (st,stm32-dcmi)
+   |||| |||| |||| |||| |||| |||| |||| |||| 8-pins (14 max), 80 MHz each
 
    USB2 (st,stm32-otghs)
    |||||||||||||||||||||||| 480 MHz
@@ -35,8 +35,8 @@ Minimalist approach to a video devboard, comes with a camera and a display and f
 
 .. code-block::
 
-   DVP camera input (st,stm32-dcmi) 14 pins max, 80 MHz each
-   |||| |||| |||| |||| |||| |||| |||| |||| 640 MHz
+   DVP camera input (st,stm32-dcmi)
+   |||| |||| |||| |||| |||| |||| |||| |||| 8 pins (14 max), 80 MHz each
 
    USB2 (st,stm32-otghs / st,stm32-otghs)
    |||||||||||||||||||||||| 480 MHz
