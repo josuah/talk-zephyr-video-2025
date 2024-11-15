@@ -1,7 +1,8 @@
 XIAO ESP32S3 Sense
 ******************
 
-Self-contained board for wireless (WiFi, Bluetooth).
+Self-contained board for wireless (WiFi, Bluetooth),
+coming with a camera and microphone.
 
 .. image:: img/Xiao-ESP32-S3-Sense.jpg
    :width: 100%
