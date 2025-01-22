@@ -3,9 +3,18 @@
 
 linkColor: '#1b7b88'
 
-pageSetup: {firstTemplate: standardPage, height: 9cm, margin-bottom: 0cm, margin-gutter: 0cm,
-  margin-left: 0cm, margin-right: 0cm, margin-top: 0cm, size: null, spacing-footer: 2mm,
-  spacing-header: 2mm, width: 16cm}
+pageSetup:
+  firstTemplate: standardPage
+  height: 9cm
+  margin-bottom: 0cm
+  margin-gutter: 0cm
+  margin-left: 0cm
+  margin-right: 0cm
+  margin-top: 0cm
+  size: null
+  spacing-footer: 2mm
+  spacing-header: 2mm
+  width: 16cm
 
 pageTemplates:
   standardPage:
@@ -16,8 +25,25 @@ pageTemplates:
     showHeader: false
 
 styles:
-  bodytext: {alignment: TA_LEFT, hyphenation: false, spaceAfter: 10}
-  code: {fontSize: 11, leftIndent: 0, parent: literal, spaceAfter: 8, spaceBefore: 8}
-  literal: {textColor: '#000000'}
-  normal: {fontSize: 14}
-  titleslideinfo: {alignment: TA_CENTER, parent: normal}
+  bodytext:
+    fontName: Helvetica
+    alignment: TA_LEFT
+    hyphenation: false
+    spaceAfter: 10
+  code:
+    fontSize: 10
+    leftIndent: 0
+    parent: literal
+    spaceAfter: 8
+    spaceBefore: 8
+  literal:
+    textColor: '#000000'
+  normal:
+    fontName: Helvetica
+    fontSize: 12
+  heading:
+    fontName: Helvetica
+  titleslideinfo:
+    fontName: Helvetica
+    alignment: TA_CENTER
+    parent: normal
