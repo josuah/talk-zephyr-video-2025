@@ -80,7 +80,7 @@ We are now implementing the USB camera *itself*.
 
 tinyCLUNX33: the heart of an USB 3 webcam.
 
-| 3.4 Gbit/s under 80 mW
+| 3.4 Gbit/s under 200 mW
 
 .. image:: img/tinyclunx33_reference_design_dual_mipi_to_usb.png
 
@@ -408,6 +408,7 @@ Nice and simple, but no concurrency: a lot of time spent waiting.
        video_dequeue(mipi_dev, VIDEO_EP_OUT, &vbuf_raw, K_FOREVER);
        video_enqueue(jpeg_dev, VIDEO_EP_IN, vbuf_raw);
    }
+
 
    /* Thread 2: Handle the emptied buffers */
    while (true) {
