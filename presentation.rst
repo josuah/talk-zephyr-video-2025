@@ -210,13 +210,17 @@ Zephyr Video APIs
 
 Nice and simple, but no concurrency: a lot of time spent waiting.
 
+.. raw:: pdf
+
+   FrameBreak 50
+
 .. code-block:: c
 
-   /* First prepare a few buffers */
    for (int i = 0; i < 3; i++) {
        vbuf_raw = video_buffer_alloc(1280 * 720 * 3, K_FOREVER);
        video_enqueue(mipi_dev, VIDEO_EP_OUT, vbuf_raw);
    }
+
    for (int i = 0; i < 3; i++) {
        vbuf_jpeg = video_buffer_alloc(JPEG_BUF_SIZE, K_FOREVER);
        video_enqueue(jpeg_dev, VIDEO_EP_OUT, vbuf_jpeg);
@@ -243,6 +247,10 @@ Nice and simple, but no concurrency: a lot of time spent waiting.
 
 Fully parallel, but consumes a lot of threads: more memory overhead
 and context switching.
+
+.. raw:: pdf
+
+   FrameBreak 50
 
 .. code-block:: c
 
@@ -284,7 +292,7 @@ Maybe this can be automated for easier pipelines.
            compatible = "sony,imx219";
            port {
                    imx219_ep_out: endpoint {
-                           remote-endpoint-label = "mipi0_ep_in"; >>>
+                           remote-endpoint-label = "mipi0_ep_in";
                    };
            };
    };
@@ -295,10 +303,12 @@ Maybe this can be automated for easier pipelines.
            compatible = "tinyvision,mipi";
            port {
                    mipi0_ep_in: endpoint {
-                           remote-endpoint-label = "imx219_ep_out"; <<<
+                           remote-endpoint-label = "imx219_ep_out";
                    };
+
+
                    mipi0_ep_out: endpoint {
-                           remote-endpoint-label = "jpegenc_ep_in"; >>>
+                           remote-endpoint-label = "jpegenc_ep_in";
                    };
            };
    };
@@ -309,7 +319,7 @@ Maybe this can be automated for easier pipelines.
            compatible = "tinyvision,jpegenc";
            port {
                    jpegenc0_ep_in: endpoint {
-                           remote-endpoint-label = "mipi0_ep_in"; <<<
+                           remote-endpoint-label = "mipi0_ep_in";
                    };
                    /* jpegenc0_ep_out: to the application */
            };
@@ -395,8 +405,6 @@ Hamamatsu recommends an FPGA (customizable chip) + Analog Devices Analog-Digital
 
 Multiple lines
 ==============
-
-Doing imaging but without a machine at the other end: computer vision.
 
 Tools that can be used for building video systems: hardware to access the sensors implement all of that chain
 
@@ -497,6 +505,7 @@ Most real-time you can get!
 .. image:: img/raisin_sorting_machine.jpeg
 
 .. image:: img/lentil_sorting_party.png
+   :height: 20cm
 
 
 What it takes... Endoscopes/Borescope
@@ -509,7 +518,9 @@ Cameras usged by surgeons
 Example of real endoscope camera module (CAMEMAKE):
 
 .. image:: img/camemake_endoscope.jpeg
+
 .. image:: img/zephyr_on_endoscope.png
+   :height: 20cm
 
 
 What it takes... Wi-Fi Smartglasses
@@ -527,6 +538,7 @@ Pre-Zephyr Nordic era: needs conversion.
 .. image:: img/video_on_bluetooth.jpeg
 
 .. image:: img/zephyr_on_bluetooth_glasses.png
+   :height: 20cm
 
 
 Beyond Zephyr: ecosystem around it
@@ -534,15 +546,12 @@ Beyond Zephyr: ecosystem around it
 
 What UVC adds to the table:
 
-→ USB camera protocol supported on Linux, Windows, MaxOS, Android, iPad (not iOS yet), BSDs, 9front, QNX...
-  (thanks to laptop lid cameras)
+→ USB camera protocol supported on Linux, Windows, MaxOS, Android, iPad (not iOS yet), BSDs, 9front, QNX... (thanks to laptop lid cameras)
 
-→ Linux interoperability
-  Standardize all the video controls with Linux
+→ Linux interoperability: Standardize all the video controls with Linux
 
 → ROS2: integration of robotics (via USB cameras)
 
 → OpenCV (via USB cameras)
 
-→ Want to suport a new sensor on any ecosystem?
-  Bring Zephyr support, and now it's everywhere
+→ Want to suport a new sensor on any ecosystem? Bring Zephyr support, and now it's everywhere

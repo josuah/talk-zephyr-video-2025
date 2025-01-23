@@ -12,8 +12,8 @@ pageSetup:
   margin-right: 0cm
   margin-top: 0cm
   size: null
-  spacing-footer: 2mm
-  spacing-header: 2mm
+  spacing-footer: 0cm
+  spacing-header: 0cm
   width: 16cm
 
 pageTemplates:
