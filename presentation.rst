@@ -331,7 +331,7 @@ PyTorch → ???
 
 ``/dev/video0`` → ???
 
-These software assumes a lot of resources.
+These softwares assume a lot of resources.
 Everything to reinvent!
 
 
