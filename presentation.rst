@@ -447,8 +447,8 @@ and context switching.
            video_enqueue(mipi_dev, VIDEO_EP_OUT, vbuf_raw);
        }
        if (video_dequeue(jpeg_dev, VIDEO_EP_OUT, &vbuf_jpeg, K_NO_WAIT) == 0) {
-           video_enqueue(jpeg_dev, VIDEO_EP_OUT, vbuf_jpeg);
            app_use_jpeg_buffer();
+           video_enqueue(jpeg_dev, VIDEO_EP_OUT, vbuf_jpeg);
        }
    }
 
