@@ -218,7 +218,7 @@ Dual Cortex-M33 (small) system with peripherals usually only found on
 larger Linux-capable devices: "do more with less"
 
 .. image:: img/FRDM-MCXN947.jpg
-   :height: 20cm
+   :width: 100%
 
 .. code-block::
 
@@ -557,7 +557,8 @@ Since 1958: measuring Earth atmospheric CO2 with "1-pixel image sensors"
 .. https://www.hamamatsu.com/content/dam/hamamatsu-photonics/sites/documents/99_SALES_LIBRARY/ssd/s13360_series_kapd1052e.pdf
 .. image:: img/hamamatsu_dna_sequencing_sensor.png
 
-Sensing voltage: not a very Linux thing to do...
+The main purpose of the electronics system associated with the sensor is
+sensing voltage from the small image sensor pixel-by-pixel.
 
 
 A single line of pixels
@@ -734,6 +735,85 @@ Pre-Zephyr Nordic era: needs conversion.
    :height: 20cm
 
 
+Next in Zephyr Video
+====================
+
+A sneak peek at what is WIP and could land in Zephyr
+
+→ Zephyr Video Control Framework
+
+→ Zephyr Video Shell
+
+→ Zephyr Video over USB
+
+
+Video Control Framework
+=======================
+
+.. image:: img/zephyr_next_ctrl.png
+   :width: 100%
+
+Move repeated operations on every drivers into the API, making drivers simpler and easier to use.
+
+→ More similar to Linux
+Porting drivers becomes easier.
+
+→ Drivers do not have to implement get(min/max/default/current)
+(just declare them once during ``init()``) but only set(current).
+
+→ Adds types to controls,
+
+→ Adds range checks for min/max.
+
+→ Apply the default value at startup automatically.
+
+→ No more need to forward controls to the child manually.
+Resolves which driver to call.
+
+
+Zephyr Shell
+============
+
+.. image:: img/zephyr_next_shell.png
+   :width: 100%
+   
+→ Zephyr Shell: a debug tap for tinkering the video devices
+
+→ Explore the video API from command line.
+
+→ Note: command names not stable yet
+
+.. image:: img/zephyr_shell_1.png
+   :height: 6cm
+
+.. image:: img/zephyr_shell_2.png
+   :height: 6cm
+
+An old idea: tiv, imcat, catimg, n³, viu...
+
+.. image:: img/zephyr_shell_ansi.png
+   :height: 20cm
+
+
+Video over USB (UVC)
+====================
+
+.. image:: img/zephyr_next_uvc.png
+   :width: 100%
+
+The webcam protocol for any Zephyr video device.
+
+→ Video API: Exposes a normal video sink to
+
+→ Zero conf: only implement the video driver and declare it
+
+→ Extended UVC support: custom formats and controls, multiple streams
+
+→ Cross-platform support: tested on various desktop and mobile OSes
+
+→ Used in real products: ConstructiveRealities 3D camera (depth-sensing aka ToF)
+
+
 Beyond Zephyr: ecosystem around it
 ==================================
 
@@ -745,6 +825,14 @@ What UVC adds to the table:
 
 → ROS2: integration of robotics (via USB cameras)
 
-→ OpenCV (via USB cameras)
+→ OpenCV: Computer Vision (via USB cameras)
 
 → Want to suport a new sensor on any ecosystem? Bring Zephyr support, and now it's everywhere
+
+→ OpenMV: MicroPython video APIs + devboards (not related to Zephyr)
+
+
+Question time?
+==============
+
+You are welcome to visit the Zephyr stand at building K.
